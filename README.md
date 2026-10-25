@@ -14,7 +14,7 @@ Official technical documentation and (once recovered) website source for **Toby 
 - **Website enquiries:** Netlify contact form notifications
 - **Search visibility:** Google Search Console and Google Business Profile have been part of the launch setup
 
-This repository currently contains **documentation, not a verified backup of the deployed website source code**. The live site remains hosted on Netlify. Do not assume changes here will deploy automatically.
+This repository currently contains **documentation, not a verified backup of the deployed website source code**. On 25 October 2026, the deployed static site was downloaded from Netlify, edited to include Calendly consultation links, and manually published. The source ZIP has **not yet been committed to this repository**. The live site remains hosted on Netlify. Do not assume changes here will deploy automatically.
 
 ## Documentation
 
@@ -22,6 +22,7 @@ This repository currently contains **documentation, not a verified backup of the
 - [Business email setup](docs/EMAIL-SETUP.md)
 - [Contact form operations](docs/CONTACT-FORMS.md)
 - [Launch and maintenance checklist](docs/LAUNCH-CHECKLIST.md)
+- [Calendly consultation booking integration and deployment record](docs/CALENDLY-BOOKING.md)
 - [Source recovery and deployment plan](docs/SOURCE-RECOVERY.md)
 
 ## Security
@@ -30,4 +31,4 @@ Never commit passwords, mailbox credentials, SMTP secrets, API tokens, customer 
 
 ## Next milestone
 
-Identify the Netlify site's deployment source and obtain the original source files or a verified export before connecting this GitHub repository to production deployments.
+Commit and verify the recovered Netlify static-site files as a code backup, test Calendly-to-Google Calendar booking end to end, and identify Netlify's deployment source before connecting this repository to production.
