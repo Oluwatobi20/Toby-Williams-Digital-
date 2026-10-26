@@ -13,6 +13,7 @@ const fs=require('fs');
    page.on('pageerror',e=>failures.push(device+' JS error: '+e.message));
    for(const path of ['index.html','services.html','music-marketing.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
     await page.goto('http://127.0.0.1:8765/'+path,{waitUntil:'domcontentloaded'});
+    await page.locator('.twd-cookie-reject').click().catch(()=>{});
     await page.screenshot({path:'qa-screenshots/'+device+'-'+path.replace('.html','')+'.png',fullPage:path==='index.html'});
     const m=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,view:innerWidth,css:!![...document.styleSheets].find(x=>x.href&&x.href.includes('bold-dark-preview.css')),bg:getComputedStyle(document.body).backgroundColor}));
     if(m.scroll>m.view+2)failures.push(device+' '+path+' horizontal overflow '+m.scroll+'/'+m.view);
@@ -29,6 +30,8 @@ const fs=require('fs');
    await page.goto('http://127.0.0.1:8765/contact.html');
    if(await page.locator('form[data-netlify]').count()!==1)failures.push(device+' Netlify form missing');
    if(await page.locator('input[name="privacy-consent"]').count()!==1)failures.push(device+' consent checkbox missing');
+   if(await page.locator('form[name="project-enquiry"] input[name="form-name"]').count()!==1)failures.push(device+' Netlify hidden form name missing');
+   if(await page.locator('form[name="project-enquiry"]').getAttribute('action')!=='/thank-you.html')failures.push(device+' wrong form action');
    console.log('Checked '+device);
    await page.close();
   }
