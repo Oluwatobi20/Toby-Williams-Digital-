@@ -1,0 +1,57 @@
+/* Toby Williams Digital — bold dark redesign (draft) */
+:root{--ink:#f2f8fc;--navy:#071523;--muted:#a7b9c8;--teal:#16c7c1;--teal2:#163b46;--cream:#06111e;--line:#294253;--white:#0b1c2b;--shadow:0 24px 60px rgba(0,0,0,.28)}
+body{background:#06111e;color:#f2f8fc}
+.header{background:rgba(5,16,28,.96);border-color:#243e50}
+.topbar{background:#071e2a;color:#91d9d5}
+.brandmark{background:#0e2c40;color:#30e1d5}
+.links.open{background:#091d2d}
+.links a:hover,.links a[aria-current=page],.eyebrow,.highlight,.service-icon,.card a,.feature-link,.step strong{color:#38dfd5}
+.btn{background:linear-gradient(115deg,#009ca7,#18bcb3);border-color:#17b8b4;color:#fff;border-radius:28px}
+.btn:hover{background:#087f8c}
+.btn.outline{border-color:#1fc6c0;color:#f2f8fc;background:transparent}
+.btn.outline:hover{background:#0d3440}
+.btn.light{background:#d8fffa;color:#06202a;border-color:#d8fffa}
+.hero{background:radial-gradient(ellipse at 76% 26%,#11384d 0,transparent 45%),linear-gradient(145deg,#071421,#06111e 70%);padding:75px 0 62px}
+.hero-grid{gap:34px}
+.hero h1{font-size:clamp(2.8rem,5.4vw,5rem)}
+.hero .lead,.lead,.pagehead p,.section-intro p,.card p,.price-card ul,.statline div,.micro,.hero-proof,.small-note{color:#a7b9c8}
+.hero-proof li:before{color:#38dfd5}
+.section.white{background:#091a2a}
+.section.dark{background:#06111e}
+.card,.price-card,.contact-box{background:#0d2233;border-color:#254254;box-shadow:0 10px 32px rgba(0,0,0,.13)}
+.price-card.featured{border-color:#16c7c1}
+.service-icon{background:#123d49}
+.statline{border-color:#294253}
+.statline strong{color:#f2f8fc}
+.callout{background:linear-gradient(120deg,#103b46,#0b2638);border:1px solid #20505a}
+.notice{background:#103340;border-color:#16c7c1;color:#d9eff1}
+.tag{background:#124249;color:#78e9dc}
+.list-check li,.step{border-color:#294253}
+.case-visual{background:#143346}
+.case-site,.case-head,.case-body{background:#e9f5f2;color:#10283b}
+.case-body p{color:#425e6a}
+.field input,.field textarea,.field select{background:#091b2b;color:#f2f8fc;border-color:#355569}
+.field input::placeholder,.field textarea::placeholder{color:#a7b9c8}
+.footer{background:#030c15}
+.pagehead{background:radial-gradient(circle at 80% 10%,#113449 0,transparent 50%)}
+.placeholder{background:#3a3020;color:#ffebc0;border-color:#77613a}
+.hero-visual{border:1px solid #23546a;border-radius:22px;padding:18px;background:linear-gradient(145deg,#102b40,#061420);box-shadow:0 22px 60px #0007}
+.visual-header{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#a9cbd2;font-size:.75rem;margin-bottom:15px}
+.visual-status{color:#42e3ce;font-size:.7rem;letter-spacing:.06em}
+.visual-content{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}
+.release-tile{background:linear-gradient(140deg,#18485d,#071826);border:1px solid #285266;border-radius:15px;min-height:260px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.release-disc{width:125px;height:125px;border-radius:50%;background:repeating-radial-gradient(circle,#0b2d3a 0 7px,#16485a 8px 10px);border:9px solid #0b1a28;box-shadow:0 8px 35px #0008;display:grid;place-items:center;color:#36d9d0;font-size:2rem;align-self:center;margin:10px 0}
+.release-tile strong{font-size:1.2rem;line-height:1.2}
+.release-tile small{color:#b6ced7}
+.visual-stack{display:grid;gap:12px}
+.metric-tile{background:#0b2032;border:1px solid #25475b;border-radius:14px;padding:15px}
+.metric-tile span{display:block;color:#a8c2ce;font-size:.76rem}
+.metric-tile strong{display:block;font-size:1.15rem;margin:4px 0}
+.metric-bars{height:65px;display:flex;gap:6px;align-items:end;margin-top:9px}
+.metric-bars i{flex:1;border-radius:4px 4px 0 0;background:linear-gradient(#35e4d6,#087f98);height:var(--h)}
+.social-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}
+.social-tile{background:#0c2536;border:1px solid #285061;border-radius:12px;padding:12px 10px}
+.social-tile strong{display:block;font-size:.88rem}
+.social-tile span{display:block;font-size:.69rem;color:#abc4ce}
+.visual-disclaimer{font-size:.7rem;color:#8daebc;margin:12px 2px 0}
+@media(max-width:650px){.hero{padding:36px 0 48px}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}.hero-visual{padding:12px}.release-tile{min-height:220px;padding:12px}.release-disc{width:85px;height:85px}.metric-tile{padding:10px}.visual-content{gap:8px}.social-strip{gap:6px}.social-tile{padding:9px 6px}.hero .actions .btn:nth-child(3){display:none}}
