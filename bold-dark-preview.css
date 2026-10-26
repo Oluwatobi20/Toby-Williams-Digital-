@@ -109,3 +109,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  .release-disc{width:65px;height:65px;margin:2px auto}
  .social-strip{grid-template-columns:1fr 1fr 1fr}
 }
+
+/* Visual QA: separate release-card labels from headline */
+.release-tile small{display:block;line-height:1.4;margin:7px 0;font-size:.7rem;letter-spacing:.03em}
+.release-tile strong{display:block;margin:7px 0 9px;line-height:1.35}
+.release-tile .release-disc{flex-shrink:0}
+@media(max-width:650px){.release-tile small{font-size:.64rem}.release-tile strong{font-size:.9rem}}
