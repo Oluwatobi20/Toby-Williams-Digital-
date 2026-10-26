@@ -2,6 +2,8 @@ name: Draft website browser QA
 on:
   push:
     branches: [bold-dark-redesign-preview-2026]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
