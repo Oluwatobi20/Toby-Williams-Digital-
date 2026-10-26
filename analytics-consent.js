@@ -59,7 +59,28 @@
     banner.hidden = false;
   }
 
+  // Record consultation intent only after the visitor has accepted analytics.
+  // This measures a click to Calendly, not a completed booking.
+  function trackConsultationClicks() {
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a[href]');
+      if (!link || consent !== 'accepted') return;
+      let url;
+      try { url = new URL(link.href, window.location.href); } catch (e) { return; }
+      if (url.hostname === 'calendly.com' && url.pathname.indexOf('/hello-tobywilliamsdigital/') === 0) {
+        startAnalytics();
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'consultation_booking_click', {
+            link_url: url.origin + url.pathname,
+            link_text: (link.textContent || '').trim().slice(0, 100)
+          });
+        }
+      }
+    });
+  }
+
   function init() {
+    trackConsultationClicks();
     const footer = document.querySelector('.foot-bottom');
     if (footer && !document.getElementById('twd-cookie-settings')) {
       const button = document.createElement('button');
