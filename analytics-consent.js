@@ -36,7 +36,7 @@
     try { localStorage.setItem(storageKey, value); } catch (e) {}
     const banner = document.getElementById('twd-cookie-banner');
     if (banner) banner.hidden = true;
-    if (value === 'accepted') startAnalytics();
+    if (value === 'accepted') { startAnalytics(); trackConfirmedEnquiry(); }
     if (value === 'rejected' && previous === 'accepted') {
       removeAnalyticsCookies();
       // Reload to stop any analytics requests already running on this page.
@@ -79,6 +79,18 @@
     });
   }
 
+  function trackConfirmedEnquiry() {
+    if (window.location.pathname !== '/thank-you.html' || consent !== 'accepted') return;
+    let pending = null;
+    try { pending = sessionStorage.getItem('twd-pending-enquiry'); } catch (e) {}
+    if (!pending) return;
+    const age = Date.now() - Number(pending);
+    try { sessionStorage.removeItem('twd-pending-enquiry'); } catch (e) {}
+    if (!Number.isFinite(age) || age < 0 || age > 10 * 60 * 1000) return;
+    startAnalytics();
+    window.gtag('event', 'generate_lead', { lead_source: 'website_contact_form' });
+  }
+
   function init() {
     trackConsultationClicks();
     const footer = document.querySelector('.foot-bottom');
@@ -91,7 +103,7 @@
       button.addEventListener('click', showBanner);
       footer.appendChild(button);
     }
-    if (consent === 'accepted') startAnalytics();
+    if (consent === 'accepted') { startAnalytics(); trackConfirmedEnquiry(); }
     else if (consent !== 'rejected') showBanner();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
