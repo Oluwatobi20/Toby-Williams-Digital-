@@ -46,6 +46,11 @@ This repository contains the source files for its multi-page marketing website. 
 **Bookings:** Calendly  
 **Testing:** GitHub Actions and Playwright-based browser checks
 
+## Featured portfolio case study
+
+**[Technical SEO and GEO readiness — sitemap, structured data and answer-first content](docs/SEO-GEO-CASE-STUDY.md)**  
+A documented audit and implementation covering XML sitemap completeness, Schema.org JSON-LD and practical music marketing FAQs. Includes validation and measurement plans, with no unverified performance claims.
+
 ## Explore the work
 
 Start with [the homepage](https://tobywilliamsdigital.co.uk), then visit the [services page](https://tobywilliamsdigital.co.uk/services.html) and [music marketing page](https://tobywilliamsdigital.co.uk/music-marketing.html). The [contact page](https://tobywilliamsdigital.co.uk/contact.html) demonstrates the site's lead-generation journey.
