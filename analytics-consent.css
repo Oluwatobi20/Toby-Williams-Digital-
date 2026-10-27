@@ -11,3 +11,13 @@
 .twd-cookie-accept{background:#0b8b88;color:white}
 .twd-cookie-settings{border:0;background:transparent;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;font-size:.8rem;padding:0}
 @media(max-width:700px){.twd-cookie-inner{display:block}.twd-cookie-actions{margin-top:14px;flex-wrap:wrap}.twd-cookie-actions button{flex:1;min-width:130px}}
+
+/* Match the approved dark navy / teal redesign */
+.twd-cookie-banner{background:#0b2131;color:#edf9fc;border-top:1px solid #25bdb9;box-shadow:0 -12px 45px rgba(0,0,0,.48)}
+.twd-cookie-inner p{color:#bfd2dc}
+.twd-cookie-inner a{color:#63ece0}
+.twd-cookie-actions button{border-color:#24c6c1;border-radius:25px;min-height:44px}
+.twd-cookie-reject{background:#102c3c;color:#f3fbfd}
+.twd-cookie-accept{background:#0ca9a6;color:#fff}
+.twd-cookie-actions button:focus-visible,.twd-cookie-settings:focus-visible{outline:3px solid #79f7e9;outline-offset:3px}
+@media(max-width:700px){.twd-cookie-banner{padding:14px 17px}.twd-cookie-actions{gap:9px}.twd-cookie-actions button{font-size:.8rem}}

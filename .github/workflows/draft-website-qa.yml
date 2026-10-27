@@ -1,0 +1,28 @@
+name: Draft website browser QA
+on:
+  push:
+    branches: [bold-dark-redesign-preview-2026]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - name: Desktop and mobile QA
+        run: node .github/scripts/visual-qa.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toby-draft-browser-screenshots
+          path: qa-screenshots/
+          retention-days: 7
