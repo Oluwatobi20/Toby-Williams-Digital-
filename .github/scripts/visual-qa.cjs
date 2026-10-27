@@ -13,7 +13,7 @@ const fs=require('fs');
    page.on('pageerror',e=>failures.push(device+' JS error: '+e.message));
    for(const path of ['index.html','services.html','music-marketing.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
     await page.goto('http://127.0.0.1:8765/'+path,{waitUntil:'domcontentloaded'});
-    await page.locator('.twd-cookie-reject').click().catch(()=>{});
+    if(await page.locator('.twd-cookie-reject').isVisible()) await page.locator('.twd-cookie-reject').click();
     await page.screenshot({path:'qa-screenshots/'+device+'-'+path.replace('.html','')+'.png',fullPage:path==='index.html'});
     const m=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,view:innerWidth,css:!![...document.styleSheets].find(x=>x.href&&x.href.includes('bold-dark-preview.css')),bg:getComputedStyle(document.body).backgroundColor}));
     if(m.scroll>m.view+2)failures.push(device+' '+path+' horizontal overflow '+m.scroll+'/'+m.view);
