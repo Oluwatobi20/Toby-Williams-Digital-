@@ -4,7 +4,7 @@
 **Date:** 27 October 2026  
 **Role demonstrated:** Digital marketing strategy, technical SEO, content strategy and website implementation  
 **Website:** https://tobywilliamsdigital.co.uk  
-**Status:** Proposed repository changes awaiting review and production deployment. This case study records implementation work, not verified search-performance gains.
+**Status:** Implementation committed to GitHub and reviewed through a successful Netlify deployment-preview status. Production deployment and live visual validation must be checked separately. This case study does not claim verified search-performance gains.
 
 ## Business context
 
@@ -79,7 +79,7 @@ Added four visible FAQs explaining:
 
 ## Outcomes and limitations
 
-**Implemented in the repository branch:** Sitemap coverage, structured data and visible FAQ content.
+**Implemented in GitHub:** Sitemap coverage, structured data and visible FAQ content; changes prepared for production through the pull-request workflow.
 
 **Not yet established:** Production deployment, improved rankings, increased traffic, AI citations, rich results or lead uplift. Those outcomes require a live release, baseline data and follow-up measurement. This case study must be updated with dated evidence rather than assumed gains.
 
