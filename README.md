@@ -70,3 +70,14 @@ Email: hello@tobywilliamsdigital.co.uk
 ---
 
 *This repository is maintained as both a business website project and a professional digital marketing portfolio.*
+
+## Recent portfolio updates: November 2026
+
+This website was developed with Lovable and AI assistance, with GitHub for source control and Netlify for hosting. It is not a WordPress site. The HTML, CSS and JavaScript listed above describe the website implementation, rather than a claim that every line was written manually.
+
+Related work:
+
+- **[NeoSonik Studios](https://neosonikstudios.netlify.app/):** pre-launch studio website built using Lovable and AI assistance. The business is in planning; premises have not been secured. This is a separate project, not source code contained in this repository.
+- **Paw & Play:** private Shopify visual demo. Recent work covers custom draft-theme configuration, dog and concept product imagery, image-cropping and container-layout corrections, mobile/desktop card checks and navigation checks. Horizon remains the existing theme; products remain drafts and checkout is untested. This is a separate project, not a launched store or verified Shopify sales case study.
+
+No private Shopify admin URLs, preview tokens, client credentials or interview correspondence are included in this public portfolio.
