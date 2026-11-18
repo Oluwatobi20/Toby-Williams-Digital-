@@ -78,6 +78,6 @@ This website was developed with Lovable and AI assistance, with GitHub for sourc
 Related work:
 
 - **[NeoSonik Studios](https://neosonikstudios.netlify.app/):** pre-launch studio website built using Lovable and AI assistance. The business is in planning; premises have not been secured. This is a separate project, not source code contained in this repository.
-- **Paw & Play:** private Shopify visual demo. Recent work covers custom draft-theme configuration, dog and concept product imagery, image-cropping and container-layout corrections, mobile/desktop card checks and navigation checks. Horizon remains the existing theme; products remain drafts and checkout is untested. This is a separate project, not a launched store or verified Shopify sales case study.
+- **Paw & Play:** a pre-launch Shopify project covering theme customisation, mobile and desktop layout checks, supplier cost research and checkout testing. I verified UK delivery pricing and a £20.98 simulated payment through to order confirmation. [Read the Paw & Play case study](https://github.com/Oluwatobi20/Oluwatobi20#paw--play--shopify-store-preparation-and-checkout-testing).
 
 No private Shopify admin URLs, preview tokens, client credentials or interview correspondence are included in this public portfolio.
