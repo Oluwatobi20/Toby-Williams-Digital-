@@ -1,0 +1,20 @@
+name: Website chatbot checks
+on:
+  push:
+    paths: ['chatbot.*', '*.html', 'tests/chatbot.cjs', '.github/workflows/chatbot-qa.yml']
+  pull_request:
+    paths: ['chatbot.*', '*.html', 'tests/chatbot.cjs', '.github/workflows/chatbot-qa.yml']
+permissions:
+  contents: read
+jobs:
+  chatbot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --no-save --package-lock=false jsdom playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/chatbot.cjs --browser
