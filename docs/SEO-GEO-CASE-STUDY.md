@@ -86,3 +86,7 @@ Added four visible FAQs explaining:
 ## Recruiter summary
 
 > Audited a live digital marketing website and implemented an XML sitemap correction, Schema.org structured data and audience-led, answer-first music marketing FAQs. Documented the changes, validation plan and measurement framework as an SEO/GEO portfolio case study, without making unsupported performance claims.
+
+## Follow-up review: 25 November 2026
+
+A direct HTTP review verified that the earlier Organization/Service markup and music FAQs are present on the live website. See [the dated SEO/GEO/AEO review](SEO-GEO-AEO-REVIEW-2026-11-25.md) for the expanded service answers, metadata updates and validation boundaries. The earlier production uncertainty described above applies to the original audit record; new changes require their own publication verification.

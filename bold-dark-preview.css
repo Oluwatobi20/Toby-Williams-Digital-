@@ -115,3 +115,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .release-tile strong{display:block;margin:7px 0 9px;line-height:1.35}
 .release-tile .release-disc{flex-shrink:0}
 @media(max-width:650px){.release-tile small{font-size:.64rem}.release-tile strong{font-size:.9rem}}
+
+/* Searchable service answers share the existing card styling. */
+.answer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}.answer-grid .card{min-width:0}.answer-grid p{margin-bottom:0}.answer-grid a{text-decoration:underline;text-underline-offset:.2em}@media(max-width:700px){.answer-grid{grid-template-columns:1fr}}
