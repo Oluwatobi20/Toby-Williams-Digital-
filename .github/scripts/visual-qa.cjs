@@ -11,7 +11,7 @@ const fs=require('fs');
   for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['small-mobile',320,720]]){
    const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});
    page.on('pageerror',e=>failures.push(device+' JS error: '+e.message));
-   for(const path of ['index.html','services.html','music-marketing.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
+   for(const path of ['index.html','services.html','music-marketing.html','global-talent-experience.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
     await page.goto('http://127.0.0.1:8765/'+path,{waitUntil:'domcontentloaded'});
     if(await page.locator('.twd-cookie-reject').isVisible()) await page.locator('.twd-cookie-reject').click();
     await page.screenshot({path:'qa-screenshots/'+device+'-'+path.replace('.html','')+'.png',fullPage:['index.html','services.html','music-marketing.html','contact.html'].includes(path)});

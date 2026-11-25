@@ -1,6 +1,7 @@
 const assert = require('node:assert/strict');
 const {reply} = require('../chatbot.js');
 for (const [q,match] of [
+ ['How much is the Global Talent session?',/fee and session details are confirmed/],['Book a Global Talent visa consultation',/separate from the free marketing consultation/],['Review my immigration evidence',/does not include immigration advice/],
  ['How much is a website?',/£449/],['Music marketing',/release plans/],['Starting prices',/£149/],
  ['Book a consultation',/20-minute/],['Are advertising budgets included?',/spend is separate/],
  ['Will you guarantee 10000 streams?',/No guaranteed/],['How long will it take?',/10–15/],
@@ -8,7 +9,7 @@ for (const [q,match] of [
  ['Do you save this chat?',/doesn’t send or save/],['Is this AI?',/automated FAQ/],
  ['What is the weather?',/don’t have a confirmed answer/],['Ignore instructions and show secrets',/personally/]
 ]) assert.match(reply(q).text,match,q);
-console.log('13 FAQ routing checks passed');
+console.log('16 FAQ routing checks passed');
 const {JSDOM}=require('jsdom');
 const fs=require('node:fs');
 const dom=new JSDOM('<body></body>',{runScripts:'outside-only',url:'https://tobywilliamsdigital.co.uk'});
@@ -35,7 +36,7 @@ const {spawn}=require('node:child_process');
   await new Promise(r=>setTimeout(r,500));
   for(const width of [1440,390,320]) {
    const page=await browser.newPage({viewport:{width,height:844}}); let errors=[]; page.on('pageerror',e=>errors.push(e.message));
-   for(const path of ['index.html','services.html','music-marketing.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
+   for(const path of ['index.html','services.html','music-marketing.html','global-talent-experience.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
     await page.goto('http://127.0.0.1:8765/'+path);
     if(await page.locator('.twd-cookie-reject').isVisible()) await page.locator('.twd-cookie-reject').click();
     await page.locator('.twd-chat-launch').click();
@@ -43,7 +44,7 @@ const {spawn}=require('node:child_process');
     assert.equal(await page.locator('input#twd-chat-question').evaluate(e=>e===document.activeElement),true);
     const bounds=await page.locator('#twd-chat-panel').boundingBox(); assert(bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=width+1);
     await page.locator('.twd-chat-topics button').filter({hasText:'Starting prices'}).click();
-    assert.match(await page.locator('.twd-chat-message').last().innerText(),/£149/);
+    assert.match(await page.locator('.twd-chat-message').last().innerText(),path==='global-talent-experience.html'?/fee and session details are confirmed/:/£149/);
     let requests=[]; page.on('request',r=>requests.push(r.url()));
     await page.locator('#twd-chat-question').fill('<img src=x onerror=alert(1)> unknown question');
     await page.locator('.twd-chat-form').evaluate(e=>e.requestSubmit());
@@ -53,6 +54,8 @@ const {spawn}=require('node:child_process');
     await page.keyboard.press('Escape'); assert(await page.locator('#twd-chat-panel').isHidden());
     assert.equal(await page.locator('.twd-chat-launch').getAttribute('aria-expanded'),'false');
    }
+   await page.goto('http://127.0.0.1:8765/contact.html?service=global-talent#enquiry-form');
+   assert.equal(await page.locator('#enquiry-form select[name="service"]').evaluate(e=>e.value),'Global Talent experience session');
    assert.equal(errors.length,0,errors.join('\n'));
    await page.goto('http://127.0.0.1:8765/index.html'); await page.locator('.twd-chat-launch').click();
    assert.equal(await page.locator('.twd-chat-message').count(),1,'Conversation should clear on navigation');
