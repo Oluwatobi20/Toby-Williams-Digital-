@@ -34,7 +34,7 @@ const {spawn}=require('node:child_process');
  let browser; try { browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),headless:true,args:['--no-sandbox']}); } catch(e) { server.kill(); throw e; }
  try {
   await new Promise(r=>setTimeout(r,500));
-  for(const width of [1440,390,320]) {
+  for(const width of [1440,768,390,320]) {
    const page=await browser.newPage({viewport:{width,height:844}}); let errors=[]; page.on('pageerror',e=>errors.push(e.message));
    for(const path of ['index.html','services.html','music-marketing.html','global-talent-experience.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
     await page.goto('http://127.0.0.1:8765/'+path);
