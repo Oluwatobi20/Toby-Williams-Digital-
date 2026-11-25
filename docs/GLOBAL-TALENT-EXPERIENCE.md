@@ -15,3 +15,7 @@ The service appears separately from marketing packages, with footer links, a ser
 No price, session length, availability, payment facility, external booking calendar, regulator registration or approval rate has been invented. These enquiries create no booking or payment obligation. Fees, duration, format and scope must be confirmed before booking.
 
 Validation: HTML/schema/local-link checks on nine pages; eight distinct sitemap URLs; dedicated enquiry selection; contextual chatbot routing; existing automated mobile/desktop and chatbot browser workflows extended to cover the page. Do not describe source changes as live until production HTTP verification succeeds.
+
+## Owner-confirmed package, 25 November 2026
+
+Supersedes the initial unpriced scope above: £250, one-hour session, a general explanation of document/evidence categories in official guidance, and 30 days of follow-up questions after the session with replies within 24–48 hours. No individual evidence assessment or application review. Full refund requests within 24 hours of payment; statutory consumer rights preserved. Published terms distinguish cancellation request time from refund processing, and include applicable 14-day rights and early-start conditions. Enquiry only, with no payment collection enabled.
