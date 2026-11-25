@@ -118,3 +118,7 @@ Use a **professional generic avatar**, not the owner's likeness or cloned voice.
 - Confirm recording policy and retention period.
 - Confirm whether telephone AI will use a new UK number or an existing business number.
 - Verify the live service prices and package details before activating the assistant.
+
+## Global Talent experience service: added 25 November 2026
+
+This is a separate personal-experience and general-information session about Toby's own journey. It does not provide eligibility assessments, application/evidence reviews, personalised recommendations, representation, or approval guarantees. Session format, duration, availability and any fee are confirmed before booking; the free marketing consultation is not the booking route. Link to global-talent-experience.html and contact.html?service=global-talent#enquiry-form. Do not collect application documents or individual immigration histories. For questions about an individual case, signpost to https://www.gov.uk/find-an-immigration-adviser.
