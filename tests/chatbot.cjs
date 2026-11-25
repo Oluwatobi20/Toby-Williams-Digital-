@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const {reply} = require('../chatbot.js');
 for (const [q,match] of [
- ['How much is the Global Talent session?',/fee and session details are confirmed/],['Book a Global Talent visa consultation',/separate from the free marketing consultation/],['Review my immigration evidence',/does not include immigration advice/],
+ ['How much is the Global Talent session?',/£250 for a one-hour session/],['Book a Global Talent visa consultation',/separate from the free marketing consultation/],['Review my immigration evidence',/does not include immigration advice/],
  ['How much is a website?',/£449/],['Music marketing',/release plans/],['Starting prices',/£149/],
  ['Book a consultation',/20-minute/],['Are advertising budgets included?',/spend is separate/],
  ['Will you guarantee 10000 streams?',/No guaranteed/],['How long will it take?',/10–15/],
@@ -44,7 +44,7 @@ const {spawn}=require('node:child_process');
     assert.equal(await page.locator('input#twd-chat-question').evaluate(e=>e===document.activeElement),true);
     const bounds=await page.locator('#twd-chat-panel').boundingBox(); assert(bounds.x>=0&&bounds.y>=0&&bounds.x+bounds.width<=width+1);
     await page.locator('.twd-chat-topics button').filter({hasText:'Starting prices'}).click();
-    assert.match(await page.locator('.twd-chat-message').last().innerText(),path==='global-talent-experience.html'?/fee and session details are confirmed/:/£149/);
+    assert.match(await page.locator('.twd-chat-message').last().innerText(),path==='global-talent-experience.html'?/£250 for a one-hour session/:/£149/);
     let requests=[]; page.on('request',r=>requests.push(r.url()));
     await page.locator('#twd-chat-question').fill('<img src=x onerror=alert(1)> unknown question');
     await page.locator('.twd-chat-form').evaluate(e=>e.requestSubmit());
