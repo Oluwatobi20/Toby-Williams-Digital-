@@ -8,7 +8,7 @@ const fs=require('fs');
  let failures=[];
  try{
   await new Promise(r=>setTimeout(r,1500));
-  for(const [device,width,height] of [['desktop',1440,900],['mobile',390,844],['small-mobile',320,720]]){
+  for(const [device,width,height] of [['desktop',1440,900],['tablet',768,1024],['mobile',390,844],['small-mobile',320,720]]){
    const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1});
    page.on('pageerror',e=>failures.push(device+' JS error: '+e.message));
    for(const path of ['index.html','services.html','music-marketing.html','global-talent-experience.html','portfolio.html','about.html','contact.html','privacy.html','thank-you.html']){
