@@ -124,8 +124,8 @@ Toby
 - Follow-up: answer within the published scope and response window; refer case-specific immigration questions to a regulated adviser.
 
 ## Launch checks still requiring account evidence
-- Payment provider/account and public payment link are not yet confirmed.
-- Paid-session availability and booking URL are not yet confirmed.
+- Payment provider confirmed by Toby: existing Revolut Pro. The £250 client payment link is still required.
+- Paid-session availability confirmed by Toby: Thursdays and Fridays, 14:00–18:00 Europe/London; one-hour sessions, latest start 17:00. Availability must respect existing calendar conflicts. The paid-session booking URL is still required.
 - Existing free marketing Calendly URL is present in the site; calendar conflict handling and invite delivery need an end-to-end check.
 - Do not publish a fake checkout, a reusable private meeting link or a payment-success claim.
 - Confirm legal trading details, invoicing identity, tax treatment and client terms before taking payment.
