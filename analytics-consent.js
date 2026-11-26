@@ -80,7 +80,7 @@
   }
 
   function trackConfirmedEnquiry() {
-    if (window.location.pathname !== '/thank-you.html' || consent !== 'accepted') return;
+    if (!/^\/thank-you(?:\.html)?\/?$/.test(window.location.pathname) || consent !== 'accepted') return;
     let pending = null;
     try { pending = sessionStorage.getItem('twd-pending-enquiry'); } catch (e) {}
     if (!pending) return;
